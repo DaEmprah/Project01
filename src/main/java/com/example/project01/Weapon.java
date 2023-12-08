@@ -31,22 +31,7 @@ public class Weapon {
         this.heavyDamage = heavyDamage;
 
     }
-    public Weapon(String name, int cost, int size,  int handling, int meleeDamage, int heavyDamage){
-        this.name = name;
-        this.cost = cost;
-        this.size = size;
-        this.ammoType = "none";
-        this.damage = 0;
-        this.rateOfFire = 0;
-        this.weaponCapacity = "none";
-        this.reloadSpeed = 0;
-        this.effectiveRange = 0;
-        this.handling = handling;
-        this.muzzleVelocity = 0;
-        this.meleeDamage = meleeDamage;
-        this.heavyDamage = heavyDamage;
 
-    }
     public Weapon(){
         this.name = null;
         this.cost = 0;
