@@ -1,6 +1,7 @@
 package com.example.project01;
 
 public class Weapon {
+    private String name;
     private int cost;
     private int size;
     private String ammoType;
@@ -14,7 +15,8 @@ public class Weapon {
     private int meleeDamage;
     private int heavyDamage;
 
-    public Weapon(int cost, int size, String ammoType, int damage, int rateOfFire, String weaponCapacity, int reloadSpeed, int effectiveRange, int handling, int muzzleVelocity, int meleeDamage, int heavyDamage){
+    public Weapon(String name, int cost, int size, String ammoType, int damage, int rateOfFire, String weaponCapacity, int reloadSpeed, int effectiveRange, int handling, int muzzleVelocity, int meleeDamage, int heavyDamage){
+        this.name = name;
         this.cost = cost;
         this.size = size;
         this.ammoType = ammoType;
@@ -29,7 +31,24 @@ public class Weapon {
         this.heavyDamage = heavyDamage;
 
     }
+    public Weapon(String name, int cost, int size,  int handling, int meleeDamage, int heavyDamage){
+        this.name = name;
+        this.cost = cost;
+        this.size = size;
+        this.ammoType = "none";
+        this.damage = 0;
+        this.rateOfFire = 0;
+        this.weaponCapacity = "none";
+        this.reloadSpeed = 0;
+        this.effectiveRange = 0;
+        this.handling = handling;
+        this.muzzleVelocity = 0;
+        this.meleeDamage = meleeDamage;
+        this.heavyDamage = heavyDamage;
+
+    }
     public Weapon(){
+        this.name = null;
         this.cost = 0;
         this.size = 1;
         this.ammoType = null;
@@ -43,6 +62,10 @@ public class Weapon {
         this.meleeDamage = 0;
         this.heavyDamage = 0;
     }
+    public String getName() {
+        return name;
+    }
+
     public int getCost() {
         return cost;
     }
@@ -92,6 +115,6 @@ public class Weapon {
     }
 
     public String toString(){
-        /*TODO*/
+        return("The " + getName() + " costs " + getCost() + " hunt dollars and is a " + getSize() + " slot weapon, it has " + getAmmoType() + " ammo, dealing up to " + getDamage() + " damage per upper body shot, with a fire rate of " + getRateOfFire() + "rpm. The reload takes " + getReloadSpeed() + " seconds, with a magazine size of " + getWeaponCapacity() + ". The effective headshot one-shot range is up to " + getEffectiveRange() + "m. Its bullet velocity is " + getMuzzleVelocity() + "m/s. Its handling stat is " + getHandling() + "%. A light melee attack does " + getMeleeDamage() + " damage, with a heavy attack doing " + getHeavyDamage() + " damage to the upper chest.");
     }
 }
