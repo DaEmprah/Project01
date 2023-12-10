@@ -3,10 +3,14 @@ package com.example.project01;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.io.*;
 
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
+    public Application() throws FileNotFoundException {
+    }
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("view.fxml"));
@@ -16,9 +20,10 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch();
     }
+    PrintWriter write = new PrintWriter("WeaponInfo.txt");
     //75 weapons, checked with 95% certainty, check if schitzo
     Weapon BombLance = new Weapon("Bomb Lance", 199, 3, "special ammo", 150, 15, "1/5 bolts", 4, 25, 87, 60, 180, 360);
     Weapon CaldwellRival78 = new Weapon("Caldwell Rival 78", 100, 3, "shotgun shells", 175, 90, "2/8 shells", 4, 12, 87, 400, 27, 54);
@@ -95,7 +100,61 @@ public class Application extends javafx.application.Application {
     Weapon NagantM1895Officer = new Weapon("Nagant M1895 Officer", 66, 1, "compact ammo", 91, 100, "7/14 rounds", 12, 73, 58, 330, 13, 31);
     Weapon NagantM1895OfficerBrawler = new Weapon("Nagant M1895 Officer Brawler", 80, 1, "compact ammo", 91, 100, "7/14 rounds", 12, 73, 58, 330, 31, 67);
     Weapon NagantM1895Silencer = new Weapon("Nagant M1895 Silencer", 53, 1, "compact ammo", 91, 40, "7/21 rounds", 12, 56, 61, 250, 13, 31);
-    /*TODO add gun comparison method, info output method, info filewrite method*/
     //very inefficient :)
+    public String weaponCompare(Weapon a, Weapon b){
+        String costA = a.getCost() + " $";
+        String costB = b.getCost() + " $";
+        String sizeA = a.getSize() + " slot/s";
+        String sizeB = b.getSize() + " slot/s";
+        String rangedDamageA = a.getDamage() + " damage";
+        String rangedDamageB = b.getDamage() + " damage";
+        String rpmA = a.getRateOfFire() + " rpm";
+        String rpmB = b.getRateOfFire() + " rpm";
+        String reloadSpeedA = a.getReloadSpeed() + " s";
+        String reloadSpeedB = b.getReloadSpeed() + " s";
+        String effectiveRangeA = a.getEffectiveRange() + " m";
+        String effectiveRangeB = b.getEffectiveRange() + " m";
+        String handlingA = a.getHandling() + " %";
+        String handlingB = b.getHandling() + " %";
+        String muzzleVelocityA = a.getMuzzleVelocity() + " m/s";
+        String muzzleVelocityB = b.getMuzzleVelocity() + " m/s";
+        String meleeDamageA = a.getMeleeDamage() + " damage";
+        String meleeDamageB = b.getMeleeDamage() + " damage";
+        String heavyMeleeDamageA = a.getHeavyDamage() + " damage";
+        String heavyMeleeDamageB = b.getHeavyDamage() + " damage";
+        String output = String.format("""
+                | Stat                 | %-36s | %-36s |
+                |----------------------| ------------------------------------ | ------------------------------------ |
+                | Cost                 | %-36s | %-36s |
+                | Size                 | %-36s | %-36s |
+                | Ammo Type            | %-36s | %-36s |
+                | Damage               | %-36s | %-36s |
+                | Rate of Fire         | %-36s | %-36s |
+                | Ammo Capacity        | %-36s | %-36s |
+                | Reload Speed         | %-36s | %-36s |
+                | Effective Range      | %-36s | %-36s |
+                | Handling             | %-36s | %-36s |
+                | Muzzle Velocity      | %-36s | %-36s |
+                | Melee Damage         | %-36s | %-36s |
+                | Heavy Melee Damage   | %-36s | %-36s |
+                """,
+                a.getName(), b.getName(),
+                costA, costB,
+                sizeA, sizeB,
+                a.getAmmoType(), b.getAmmoType(),
+                rangedDamageA, rangedDamageB,
+                rpmA, rpmB,
+                a.getWeaponCapacity(), b.getWeaponCapacity(),
+                reloadSpeedA, reloadSpeedB,
+                effectiveRangeA, effectiveRangeB,
+                handlingA, handlingB,
+                muzzleVelocityA, muzzleVelocityB,
+                meleeDamageA, meleeDamageB,
+                heavyMeleeDamageA, heavyMeleeDamageB);
+        return output;
+    }
+    public void writeToFile(Weapon a){
+        write.println(a.toString());
+    }
 }
 /*All weapons pre-Tide of shadows event, excluding the LeMatt Mark 2, LeMatt Mark 2 Carbine and melee-only weapons*/
