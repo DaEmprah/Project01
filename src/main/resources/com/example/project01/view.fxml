@@ -1,35 +1,400 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21">
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project01.Controller">
   <panes>
     <TitledPane animated="false" text="Weapon comparison">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <MenuButton layoutX="14.0" layoutY="56.0" mnemonicParsing="false" text="Weapon 1">
+                  <MenuButton layoutX="61.0" layoutY="56.0" mnemonicParsing="false" text="Weapon 1">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                        <Menu mnemonicParsing="false" text="Pistols">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Bornheim No. 3">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#handleMenuItemClick" text="Bornheim No. 3" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Extended" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Match" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Conversion Pistol">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Chain Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Uppercut" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Pax">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax Claw" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Dolch 96">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96" />
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96 Precision" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Nagant M1895">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Precision" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Deadeye" />
+                                    <Menu mnemonicParsing="false" text="Nagant M1895 Officer">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Brawler" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine Deadeye" />
+                                      </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rifles">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Springfield 1866">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Springfield 1866" />
+                                  <MenuItem mnemonicParsing="false" text="Springfield 1866 Marksman" />
+                                    <Menu mnemonicParsing="false" text="Springfield 1866 Compact">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Deadeye" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Striker" />
+                                      </items>
+                                    </Menu>
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Lebel 1886">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Lebel 1886" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Talon" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Martini-Henry IC1">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Martini-Henry IC1" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Deadeye" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Riposte" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Ironside" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Sparks LRR">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Sparks LRR" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Sniper" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Vetterli 71 Karabiner">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Deadeye" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Winfield M1873" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Aperture" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Musket Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Swift" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Talon" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1876 Centennial">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial Sniper" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873C">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Winfield M1873C" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Silencer" />
+                                    <Menu mnemonicParsing="false" text="Winfield M1873C Vandal">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Striker" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Deadeye" />
+                                      </items>
+                                    </Menu>
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Mosin-Nagant M1891">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Sniper" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Avtomat" />
+                                    <Menu mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Drum" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Mace" />
+                                      </items>
+                                    </Menu>
+                                </items>
+                              </Menu>
+                            <MenuItem mnemonicParsing="false" text="Springfield 1892 Krag" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Shotguns">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Caldwell Rival 78">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Caldwell Rival 78" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Rival 78 Handcannon" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield 1887 Terminus">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus Handcannon" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Romero 77">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" text="Romero 77" />
+                                  <MenuItem mnemonicParsing="false" text="Romero 77 Talon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Alamo" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Handcannon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Hatchet" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Specter 1882">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Specter 1882" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Compact" />
+                                </items>
+                              </Menu>
+                            <MenuItem mnemonicParsing="false" text=" Crown &amp; King Auto-5" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Other">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Bomb Lance" />
+                              <MenuItem mnemonicParsing="false" text="Nitro Express Rifle" />
+                              <MenuItem mnemonicParsing="false" text="Crossbow" />
+                              <MenuItem mnemonicParsing="false" text="Hand Crossbow" />
+                          </items>
+                        </Menu>
                     </items>
                   </MenuButton>
-                  <MenuButton layoutX="200.0" layoutY="56.0" mnemonicParsing="false" text="Weapon 2">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
+                  <MenuButton layoutX="256.0" layoutY="56.0" mnemonicParsing="false" text="Weapon 2">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Pistols">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Bornheim No. 3">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Extended" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Match" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Conversion Pistol">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Chain Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Uppercut" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Pax">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax Claw" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Dolch 96">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96" />
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96 Precision" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Nagant M1895">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Precision" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Deadeye" />
+                                    <Menu mnemonicParsing="false" text="Nagant M1895 Officer">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Brawler" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine Deadeye" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rifles">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Springfield 1866">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Springfield 1866" />
+                                    <MenuItem mnemonicParsing="false" text="Springfield 1866 Marksman" />
+                                    <Menu mnemonicParsing="false" text="Springfield 1866 Compact">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Deadeye" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Striker" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Lebel 1886">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Talon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Martini-Henry IC1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Deadeye" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Riposte" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Ironside" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Sparks LRR">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Sniper" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Vetterli 71 Karabiner">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Deadeye" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Aperture" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Musket Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Swift" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Talon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1876 Centennial">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial Sniper" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873C">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Silencer" />
+                                    <Menu mnemonicParsing="false" text="Winfield M1873C Vandal">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Striker" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Deadeye" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Mosin-Nagant M1891">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Sniper" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Avtomat" />
+                                    <Menu mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Drum" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Mace" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Springfield 1892 Krag" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Shotguns">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Caldwell Rival 78">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Rival 78" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Rival 78 Handcannon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield 1887 Terminus">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus Handcannon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Romero 77">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Romero 77" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Talon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Alamo" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Handcannon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Hatchet" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Specter 1882">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Compact" />
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text=" Crown &amp; King Auto-5" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Other">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Bomb Lance" />
+                              <MenuItem mnemonicParsing="false" text="Nitro Express Rifle" />
+                              <MenuItem mnemonicParsing="false" text="Crossbow" />
+                              <MenuItem mnemonicParsing="false" text="Hand Crossbow" />
+                           </items>
+                        </Menu>
+                     </items>
                   </MenuButton>
-                  <Button layoutX="428.0" layoutY="56.0" mnemonicParsing="false" text="Compare" />
-                  <Label layoutX="44.0" layoutY="111.0" text="Label" />
+                  <Button fx:id="compareButton" layoutX="473.0" layoutY="56.0" mnemonicParsing="false" onAction="#compareButtonOnAction" text="Compare" />
+                  <TextField fx:id="screen1" editable="false" layoutX="58.0" layoutY="112.0" mouseTransparent="true" prefHeight="190.0" prefWidth="483.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <Text layoutX="58.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Disclaimer: This list contains about 80% of the weapons found in Hunt: Showdown and does not include special ammo. All info was gathered from: huntshowdown.fandom.com/wiki/Weapons" wrappingWidth="448.166015625">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Text>
                </children></AnchorPane>
       </content>
     </TitledPane>
@@ -37,15 +402,200 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <MenuButton layoutX="61.0" layoutY="33.0" mnemonicParsing="false" text="Weapon">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                    </items>
+                  <Button layoutX="436.0" layoutY="46.0" mnemonicParsing="false" text="Write info to file" />
+                  <TextField fx:id="screen2" editable="false" layoutX="58.0" layoutY="99.0" mouseTransparent="true" prefHeight="190.0" prefWidth="483.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <Text fill="#cd1b1b" layoutX="263.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warning: this button will write into &quot;WeaponInfo.txt&quot;  if this file does not exist on your machine, add it in the same file, where this application is located!" wrappingWidth="320.166015625">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Text>
+                  <MenuButton layoutX="58.0" layoutY="46.0" mnemonicParsing="false" text="Weapon">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Pistols">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Bornheim No. 3">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Extended" />
+                                    <MenuItem mnemonicParsing="false" text="Bornheim No. 3 Match" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Conversion Pistol">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Chain Pistol" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Conversion Uppercut" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Caldwell Pax">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Pax Claw" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Dolch 96">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96" />
+                                    <MenuItem mnemonicParsing="false" text="Dolch 96 Precision" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Nagant M1895">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Precision" />
+                                    <MenuItem mnemonicParsing="false" text="Nagant M1895 Deadeye" />
+                                    <Menu mnemonicParsing="false" text="Nagant M1895 Officer">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Brawler" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine" />
+                                          <MenuItem mnemonicParsing="false" text="Nagant M1895 Officer Carbine Deadeye" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Rifles">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Springfield 1866">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Springfield 1866" />
+                                    <MenuItem mnemonicParsing="false" text="Springfield 1866 Marksman" />
+                                    <Menu mnemonicParsing="false" text="Springfield 1866 Compact">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Deadeye" />
+                                          <MenuItem mnemonicParsing="false" text="Springfield 1866 Compact Striker" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Lebel 1886">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Lebel 1886 Talon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Martini-Henry IC1">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Deadeye" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Riposte" />
+                                    <MenuItem mnemonicParsing="false" text="Martini-Henry IC1 Ironside" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Sparks LRR">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Silencer" />
+                                    <MenuItem mnemonicParsing="false" text="Sparks LRR Sniper" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Vetterli 71 Karabiner">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Vetterli 71 Karabiner Deadeye" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Aperture" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Musket Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Swift" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873 Talon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1876 Centennial">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1876 Centennial Sniper" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield M1873C">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Marksman" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield M1873C Silencer" />
+                                    <Menu mnemonicParsing="false" text="Winfield M1873C Vandal">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Striker" />
+                                          <MenuItem mnemonicParsing="false" text="Winfield M1873C Vandal Deadeye" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Mosin-Nagant M1891">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Sniper" />
+                                    <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Avtomat" />
+                                    <Menu mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Drum" />
+                                          <MenuItem mnemonicParsing="false" text="Mosin-Nagant M1891 Obrez Mace" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Springfield 1892 Krag" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Shotguns">
+                           <items>
+                              <Menu mnemonicParsing="false" text="Caldwell Rival 78">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Rival 78" />
+                                    <MenuItem mnemonicParsing="false" text="Caldwell Rival 78 Handcannon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Winfield 1887 Terminus">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus" />
+                                    <MenuItem mnemonicParsing="false" text="Winfield 1887 Terminus Handcannon" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Romero 77">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Romero 77" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Talon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Alamo" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Handcannon" />
+                                    <MenuItem mnemonicParsing="false" text="Romero 77 Hatchet" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Specter 1882">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Bayonet" />
+                                    <MenuItem mnemonicParsing="false" text="Specter 1882 Compact" />
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text=" Crown &amp; King Auto-5" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Other">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Bomb Lance" />
+                              <MenuItem mnemonicParsing="false" text="Nitro Express Rifle" />
+                              <MenuItem mnemonicParsing="false" text="Crossbow" />
+                              <MenuItem mnemonicParsing="false" text="Hand Crossbow" />
+                           </items>
+                        </Menu>
+                     </items>
                   </MenuButton>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="209.0" layoutX="61.0" layoutY="96.0" stroke="BLACK" strokeType="INSIDE" width="477.0" />
-                  <Label layoutX="72.0" layoutY="110.0" text="Label" />
-                  <Button layoutX="486.0" layoutY="33.0" mnemonicParsing="false" text="Button" />
                </children></AnchorPane>
       </content>
     </TitledPane>

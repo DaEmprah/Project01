@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import java.io.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Application extends javafx.application.Application {
     public Application() throws FileNotFoundException {
@@ -14,16 +15,92 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Hunt weapon comparison tool!");
         stage.setScene(scene);
         stage.show();
+        weaponList.add(BornheimNo3);
+        weaponList.add(BornheimNo3Extended);
+        weaponList.add(BornheimNo3Match);
+        weaponList.add(CaldwellConversionPistol);
+        weaponList.add(CaldwellConversionChainPistol);
+        weaponList.add(CaldwellConversionUppercut);
+        weaponList.add(CaldwellPax);
+        weaponList.add(CaldwellPaxClaw);
+        weaponList.add(Dolch96);
+        weaponList.add(Dolch96Precision);
+        weaponList.add(NagantM1895);
+        weaponList.add(NagantM1895Silencer);
+        weaponList.add(NagantM1895Precision);
+        weaponList.add(NagantM1895Deadeye);
+        weaponList.add(NagantM1895Officer);
+        weaponList.add(NagantM1895OfficerBrawler);
+        weaponList.add(NagantM1895OfficerCarbine);
+        weaponList.add(NagantM1895OfficerCarbineDeadeye);
+        weaponList.add(Springfield1866);
+        weaponList.add(Springfield1866Marksman);
+        weaponList.add(Springfield1866Compact);
+        weaponList.add(Springfield1866CompactDeadeye);
+        weaponList.add(Springfield1866CompactStriker);
+        weaponList.add(Lebel1886);
+        weaponList.add(Lebel1886Marksman);
+        weaponList.add(Lebel1886Talon);
+        weaponList.add(MartiniHenryIC1);
+        weaponList.add(MartiniHenryIC1Deadeye);
+        weaponList.add(MartiniHenryIC1Marksman);
+        weaponList.add(MartiniHenryIC1Riposte);
+        weaponList.add(MartiniHenryIC1Ironside);
+        weaponList.add(SparksLRR);
+        weaponList.add(SparksLRRSilencer);
+        weaponList.add(SparksLRRSniper);
+        weaponList.add(Vetterli71Karabiner);
+        weaponList.add(Vetterli71KarabinerBayonet);
+        weaponList.add(Vetterli71KarabinerDeadeye);
+        weaponList.add(WinfieldM1873);
+        weaponList.add(WinfieldM1873Aperture);
+        weaponList.add(WinfieldM1873MusketBayonet);
+        weaponList.add(WinfieldM1873Swift);
+        weaponList.add(WinfieldM1873Talon);
+        weaponList.add(WinfieldM1876Centennial);
+        weaponList.add(WinfieldM1876CentennialSniper);
+        weaponList.add(WinfieldM1873C);
+        weaponList.add(WinfieldM1873CMarksman);
+        weaponList.add(WinfieldM1873CSilencer);
+        weaponList.add(WinfieldM1873CVandal);
+        weaponList.add(WinfieldM1873CVandalStriker);
+        weaponList.add(WinfieldM1873CVandalDeadeye);
+        weaponList.add(MosinNagantM1891);
+        weaponList.add(MosinNagantM1891Bayonet);
+        weaponList.add(MosinNagantM1891Sniper);
+        weaponList.add(MosinNagantM1891Avtomat);
+        weaponList.add(MosinNagantM1891Obrez);
+        weaponList.add(MosinNagantM1891ObrezDrum);
+        weaponList.add(MosinNagantM1891ObrezMace);
+        weaponList.add(Springfield1892Krag);
+        weaponList.add(CaldwellRival78);
+        weaponList.add(CaldwellRival78Handcannon);
+        weaponList.add(Winfield1887Terminus);
+        weaponList.add(Winfield1887TerminusHandcannon);
+        weaponList.add(Romero77);
+        weaponList.add(Romero77Talon);
+        weaponList.add(Romero77Alamo);
+        weaponList.add(Romero77Handcannon);
+        weaponList.add(Romero77Hatchet);
+        weaponList.add(Specter1882);
+        weaponList.add(Specter1882Bayonet);
+        weaponList.add(Specter1882Compact);
+        weaponList.add(CrownAndKingAuto5);
+        weaponList.add(BombLance);
+        weaponList.add(NitroExpressRifle);
+        weaponList.add(Crossbow);
+        weaponList.add(HandCrossbow);
     }
 
     public static void main(String[] args) throws IOException {
         launch();
     }
     PrintWriter write = new PrintWriter("WeaponInfo.txt");
+    static ArrayList<Weapon> weaponList;
     //75 weapons, checked with 95% certainty, check if schitzo
     Weapon BombLance = new Weapon("Bomb Lance", 199, 3, "special ammo", 150, 15, "1/5 bolts", 4, 25, 87, 60, 180, 360);
     Weapon CaldwellRival78 = new Weapon("Caldwell Rival 78", 100, 3, "shotgun shells", 175, 90, "2/8 shells", 4, 12, 87, 400, 27, 54);
@@ -101,7 +178,7 @@ public class Application extends javafx.application.Application {
     Weapon NagantM1895OfficerBrawler = new Weapon("Nagant M1895 Officer Brawler", 80, 1, "compact ammo", 91, 100, "7/14 rounds", 12, 73, 58, 330, 31, 67);
     Weapon NagantM1895Silencer = new Weapon("Nagant M1895 Silencer", 53, 1, "compact ammo", 91, 40, "7/21 rounds", 12, 56, 61, 250, 13, 31);
     //very inefficient :)
-    public String weaponCompare(Weapon a, Weapon b){
+    public static String weaponCompare(Weapon a, Weapon b){
         String costA = a.getCost() + " $";
         String costB = b.getCost() + " $";
         String sizeA = a.getSize() + " slot/s";
