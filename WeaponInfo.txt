@@ -1,0 +1,9 @@
+The Bornheim No. 3 Extended costs 306 hunt dollars and is a 1 slot weapon, 
+it has compact ammo , dealing up to 74 damage per upper body shot at 10 meters, 
+with a fire rate of 210rpm. 
+The reload takes 8 seconds, with a magazine size of 8+1/10 rounds. 
+The effective headshot one-shot range is up to 60m. 
+Its bullet velocity is 380m/s. 
+Its handling stat is 64%. 
+A light melee attack does 13 damage, 
+with a heavy attack doing 31 damage to the upper chest.

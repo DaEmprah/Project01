@@ -100,6 +100,6 @@ public class Weapon {
     }
 
     public String toString(){
-        return("The " + getName() + " costs " + getCost() + " hunt dollars and is a " + getSize() + " slot weapon, it has " + getAmmoType() + " ammo, dealing up to " + getDamage() + " damage per upper body shot at 10 meters, with a fire rate of " + getRateOfFire() + "rpm. \n The reload takes " + getReloadSpeed() + " seconds, with a magazine size of " + getWeaponCapacity() + ". The effective headshot one-shot range is up to " + getEffectiveRange() + "m. Its bullet velocity is " + getMuzzleVelocity() + "m/s. \n Its handling stat is " + getHandling() + "%. A light melee attack does " + getMeleeDamage() + " damage, with a heavy attack doing " + getHeavyDamage() + " damage to the upper chest.");
+        return("The " + getName() + " costs " + getCost() + " hunt dollars and is a " + getSize() + " slot weapon, \nit has " + getAmmoType() + " , dealing up to " + getDamage() + " damage per upper body shot at 10 meters, \nwith a fire rate of " + getRateOfFire() + "rpm. \nThe reload takes " + getReloadSpeed() + " seconds, with a magazine size of " + getWeaponCapacity() + ". \nThe effective headshot one-shot range is up to " + getEffectiveRange() + "m. \nIts bullet velocity is " + getMuzzleVelocity() + "m/s. \nIts handling stat is " + getHandling() + "%. \nA light melee attack does " + getMeleeDamage() + " damage, \nwith a heavy attack doing " + getHeavyDamage() + " damage to the upper chest.");
     }
 }

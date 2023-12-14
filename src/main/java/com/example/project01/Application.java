@@ -4,7 +4,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.*;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -96,12 +95,11 @@ public class Application extends javafx.application.Application {
         weaponList.add(HandCrossbow);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         launch();
     }
-    PrintWriter write = new PrintWriter("WeaponInfo.txt");
-    static ArrayList<Weapon> weaponList;
-    //75 weapons, checked with 95% certainty, check if schitzo
+
+    static ArrayList<Weapon> weaponList = new ArrayList<>();
     Weapon BombLance = new Weapon("Bomb Lance", 199, 3, "special ammo", 150, 15, "1/5 bolts", 4, 25, 87, 60, 180, 360);
     Weapon CaldwellRival78 = new Weapon("Caldwell Rival 78", 100, 3, "shotgun shells", 175, 90, "2/8 shells", 4, 12, 87, 400, 27, 54);
     Weapon Crossbow = new Weapon("Crossbow", 50, 3, "special ammo", 260, 10, "1/18 bolts", 6, 47, 54, 150, 27, 54);
@@ -177,7 +175,6 @@ public class Application extends javafx.application.Application {
     Weapon NagantM1895Officer = new Weapon("Nagant M1895 Officer", 66, 1, "compact ammo", 91, 100, "7/14 rounds", 12, 73, 58, 330, 13, 31);
     Weapon NagantM1895OfficerBrawler = new Weapon("Nagant M1895 Officer Brawler", 80, 1, "compact ammo", 91, 100, "7/14 rounds", 12, 73, 58, 330, 31, 67);
     Weapon NagantM1895Silencer = new Weapon("Nagant M1895 Silencer", 53, 1, "compact ammo", 91, 40, "7/21 rounds", 12, 56, 61, 250, 13, 31);
-    //very inefficient :)
     public static String weaponCompare(Weapon a, Weapon b){
         String costA = a.getCost() + " $";
         String costB = b.getCost() + " $";
@@ -230,8 +227,18 @@ public class Application extends javafx.application.Application {
                 heavyMeleeDamageA, heavyMeleeDamageB);
         return output;
     }
-    public void writeToFile(Weapon a){
+    public static void writeToFile(Weapon a){
+        PrintWriter write;
+        {
+            try {
+                write = new PrintWriter("WeaponInfo.txt");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
         write.println(a.toString());
+        write.close();
     }
+
 }
 /*All weapons pre-Tide of shadows event, excluding the LeMatt Mark 2, LeMatt Mark 2 Carbine and melee-only weapons*/
